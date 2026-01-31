@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git -C \"c:/redwood-shores-coalition\" remote -v)",
       "Bash(git -C \"c:/redwood-shores-coalition\" add css/ js/ index.html images/)",
-      "Bash(git -C \"c:/redwood-shores-coalition\" commit -m \"$\\(cat <<''EOF''\nInitial commit: Redwood Shores Coalition website\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git -C \"c:/redwood-shores-coalition\" commit -m \"$\\(cat <<''EOF''\nInitial commit: Redwood Shores Coalition website\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"c:/redwood-shores-coalition\" remote remove origin)"
     ]
   }
 }
