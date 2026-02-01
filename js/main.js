@@ -2,7 +2,12 @@
  * Redwood Shores Coalition - Main JavaScript
  */
 
+// Google Sheets CSV URL for News & Updates
+const NEWS_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRhSn3ZxfOXYESKFPPQ06owYfvt1xZ0WUPB9WjNJoBNwcXSSZlmixnjE8Mywo97FUXGpOAmnG_gxTOP/pub?output=csv';
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Load news from Google Sheets
+    loadNewsFromSheet();
     // ========================================
     // Mobile Navigation Toggle
     // ========================================
@@ -172,3 +177,118 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// ========================================
+// Load News from Google Sheets
+// ========================================
+async function loadNewsFromSheet() {
+    const updatesList = document.querySelector('.updates-list');
+    if (!updatesList) return;
+
+    try {
+        const response = await fetch(NEWS_SHEET_URL);
+        const csvText = await response.text();
+        const newsItems = parseCSV(csvText);
+
+        if (newsItems.length > 0) {
+            updatesList.innerHTML = newsItems.map(item => `
+                <article class="update-card">
+                    <span class="update-date">${formatDate(item.date)}</span>
+                    <h3>${escapeHtml(item.title)}</h3>
+                    <p>${escapeHtml(item.content)}</p>
+                </article>
+            `).join('');
+
+            // Re-apply reveal animation to new cards
+            const newCards = updatesList.querySelectorAll('.update-card');
+            newCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            setTimeout(() => {
+                newCards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            }, 100);
+        }
+    } catch (error) {
+        console.error('Failed to load news from Google Sheets:', error);
+        // Keep existing static content as fallback
+    }
+}
+
+function parseCSV(csvText) {
+    const lines = csvText.split('\n');
+    if (lines.length < 2) return [];
+
+    const items = [];
+    let i = 1; // Skip header row
+
+    while (i < lines.length) {
+        let line = lines[i];
+
+        // Handle multi-line content (fields with newlines inside quotes)
+        while (line && (line.match(/"/g) || []).length % 2 !== 0 && i < lines.length - 1) {
+            i++;
+            line += '\n' + lines[i];
+        }
+
+        if (line.trim()) {
+            const parsed = parseCSVLine(line);
+            if (parsed.length >= 3) {
+                items.push({
+                    date: parsed[0],
+                    title: parsed[1],
+                    content: parsed[2]
+                });
+            }
+        }
+        i++;
+    }
+
+    return items;
+}
+
+function parseCSVLine(line) {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+
+        if (char === '"') {
+            if (inQuotes && line[i + 1] === '"') {
+                current += '"';
+                i++;
+            } else {
+                inQuotes = !inQuotes;
+            }
+        } else if (char === ',' && !inQuotes) {
+            result.push(current.trim());
+            current = '';
+        } else {
+            current += char;
+        }
+    }
+    result.push(current.trim());
+
+    return result;
+}
+
+function formatDate(dateStr) {
+    try {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    } catch {
+        return dateStr;
+    }
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
