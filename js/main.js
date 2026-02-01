@@ -191,11 +191,15 @@ async function loadNewsFromSheet() {
         const newsItems = parseCSV(csvText);
 
         if (newsItems.length > 0) {
-            updatesList.innerHTML = newsItems.map(item => `
+            // Limit to 3 items
+            const displayItems = newsItems.slice(0, 3);
+
+            updatesList.innerHTML = displayItems.map(item => `
                 <article class="update-card">
                     <span class="update-date">${formatDate(item.date)}</span>
                     <h3>${escapeHtml(item.title)}</h3>
                     <p>${escapeHtml(item.content)}</p>
+                    ${item.link ? `<a href="${escapeHtml(item.link)}" class="read-more" target="_blank" rel="noopener">Read More →</a>` : ''}
                 </article>
             `).join('');
 
@@ -241,7 +245,8 @@ function parseCSV(csvText) {
                 items.push({
                     date: parsed[0],
                     title: parsed[1],
-                    content: parsed[2]
+                    content: parsed[2],
+                    link: parsed[3] || ''
                 });
             }
         }
