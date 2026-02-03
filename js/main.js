@@ -108,6 +108,26 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', highlightNavigation, { passive: true });
 
     // ========================================
+    // Hero Parallax Scroll Effect
+    // ========================================
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroSection = document.querySelector('.hero');
+
+    if (heroSlides.length > 0 && heroSection) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroHeight = heroSection.offsetHeight;
+
+            if (scrolled < heroHeight) {
+                const parallaxSpeed = scrolled * 0.5;
+                heroSlides.forEach(slide => {
+                    slide.style.transform = `translateY(${parallaxSpeed}px)`;
+                });
+            }
+        }, { passive: true });
+    }
+
+    // ========================================
     // Form Handling (Basic)
     // ========================================
 
@@ -151,6 +171,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (elementTop < windowHeight - 100) {
                 element.style.opacity = '1';
                 element.style.transform = 'translateY(0)';
+
+                // Trigger one-time icon animation for concern cards
+                if (element.classList.contains('concern-card')) {
+                    const icon = element.querySelector('.concern-icon');
+                    if (icon && !icon.classList.contains('animate-in')) {
+                        icon.classList.add('animate-in');
+                    }
+                }
             }
         });
     }
@@ -176,6 +204,43 @@ document.addEventListener('DOMContentLoaded', function() {
             navToggle.focus();
         }
     });
+
+    // ========================================
+    // Floating CTA Box
+    // ========================================
+    const floatingCta = document.getElementById('floating-cta');
+    const floatingCtaClose = document.querySelector('.floating-cta-close');
+    let ctaDismissed = localStorage.getItem('ctaDismissed');
+
+    if (floatingCta && !ctaDismissed) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            if (scrolled > 800) {
+                floatingCta.classList.add('visible');
+            }
+        }, { passive: true });
+
+        if (floatingCtaClose) {
+            floatingCtaClose.addEventListener('click', function() {
+                floatingCta.classList.remove('visible');
+                setTimeout(() => {
+                    floatingCta.classList.add('hidden');
+                }, 400);
+                localStorage.setItem('ctaDismissed', 'true');
+            });
+        }
+
+        // Close when clicking the CTA button
+        const ctaButton = floatingCta.querySelector('.btn');
+        if (ctaButton) {
+            ctaButton.addEventListener('click', function() {
+                floatingCta.classList.remove('visible');
+                setTimeout(() => {
+                    floatingCta.classList.add('hidden');
+                }, 400);
+            });
+        }
+    }
 });
 
 // ========================================
