@@ -44,6 +44,9 @@ Community advocacy website for the Redwood Shores Coalition, a group opposing th
 - 700px height iframe with responsive styling
 - Allows users to generate letters to officials
 - Positioned above action cards in Take Action section
+- Header: "Make Your Voice Heard" (1.5rem, font-weight 600)
+- Subtitle: "Generate a personalized letter to decision makers in minutes. Your input can make a difference." (1rem)
+- Typography designed to be subordinate to section title while clearly identifying the tool
 
 #### Google Forms (Contact)
 - Contact form embedded via iframe
