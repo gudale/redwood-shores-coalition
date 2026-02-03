@@ -663,6 +663,24 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     width: 100%;
 }
 
+.letter-generator-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+    text-align: center;
+}
+
+.letter-generator-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .action-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
