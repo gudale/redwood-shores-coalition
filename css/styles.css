@@ -664,15 +664,15 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 }
 
 .letter-generator-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
     margin-bottom: var(--space-xs);
     text-align: center;
 }
 
 .letter-generator-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--color-text-light);
     margin-bottom: var(--space-lg);
     text-align: center;
