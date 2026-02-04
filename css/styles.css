@@ -321,6 +321,15 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     text-shadow: 2px 2px 8px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.3);
 }
 
+.hero-tagline {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.5px;
+}
+
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     color: #ffffff;
@@ -1192,6 +1201,10 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
         max-width: 280px;
     }
 
+    .hero-tagline {
+        font-size: 1.4rem;
+    }
+
     .section {
         padding: var(--space-xl) 0;
     }
@@ -1259,6 +1272,10 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.95rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
     }
 
     .signup-form {
