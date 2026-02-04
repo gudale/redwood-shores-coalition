@@ -15,16 +15,18 @@ Community advocacy website for the Redwood Shores Coalition, a group opposing th
 
 ## File Structure
 ```
+├── .gitignore          # Git exclusions (ForAI/, .claude/)
 ├── index.html          # Main single-page site
 ├── css/
 │   └── styles.css      # All styles
 ├── js/
 │   └── main.js         # Navigation, animations, Google Sheets integration
 ├── images/             # Image assets
-├── ForAI/              # Research and reference materials
+├── ForAI/              # Research and reference materials (local only, not in git)
 │   ├── mobile-research.md     # Mobile responsiveness testing notes
-│   └── forAI102.png           # Reference image
-└── CLAUDE.md           # This file
+│   └── forAI10X.png           # Reference screenshots
+├── CLAUDE.md           # This file
+└── .claude/            # Claude Code settings (local only, not in git)
 ```
 
 ## Key Features
@@ -53,6 +55,18 @@ Community advocacy website for the Redwood Shores Coalition, a group opposing th
 - Form ID: 1FAIpQLSc1i7ffB4w4Z5vjcE-ohTgQz-lCwnBYVKo9WZcwxvuQ5AYLyw
 - 800px height with full-width responsive design
 
+#### Google Slides Presentation (Our Concerns)
+- Embedded presentation: https://docs.google.com/presentation/d/e/2PACX-1vRvSw8D911iDrLIpqR83qHObFsu8egIEmdtIlO5YoaPyW4kb9CZjba2rvcvwCKSIAx0Kv0Qxlww6l4k/embed
+- Auto-play enabled with 2-second delay between slides
+- Loops continuously
+- 1280x749 medium slide size
+- Positioned in Issue Section after "For detailed analysis..." text
+- Uses aspect ratio technique (58.5% desktop, 75% mobile) for responsive design
+- Lazy loading enabled for performance
+- Provides visual data analysis of project impacts
+- Title: "See the Data: Redwood Life Project Overview"
+- Subtitle explains what users will see and why it matters
+
 ### Interactive Features
 - **Hero Parallax Effect:** Slideshow images move at 0.5x scroll speed for depth
 - **Floating CTA Box:** Appears after 800px scroll, dismissible with localStorage persistence
@@ -77,6 +91,7 @@ Community advocacy website for the Redwood Shores Coalition, a group opposing th
    - Safety Concerns
    - Process Transparency
    - Links to sister site (RedwoodLifePlan.com) for detailed analysis
+   - Embedded Google Slides presentation showing data and visual analysis
 5. **Take Action** - Letter generator embed (firmauth-online2.vercel.app) plus two action cards:
    - Stay Informed (links to Contact section)
    - Spread the Word (social sharing: Facebook, Twitter, Nextdoor)
