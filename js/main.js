@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (elementTop < windowHeight - 100) {
                 element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
+                element.style.transform = element.classList.contains('stat') ? 'translateX(0)' : 'translateY(0)';
 
                 // Trigger one-time icon animation for concern cards
                 if (element.classList.contains('concern-card')) {
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize reveal elements
     revealElements.forEach(element => {
         element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
+        element.style.transform = element.classList.contains('stat') ? 'translateX(-50px)' : 'translateY(20px)';
         element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
 
