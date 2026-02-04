@@ -80,7 +80,12 @@ Community advocacy website for the Redwood Shores Coalition, a group opposing th
 - **Smooth Scrolling:** All anchor links use smooth scroll behavior
 
 ### Site Sections
-1. **Hero** - Slideshow (4 images) with parallax effect and call to action buttons
+1. **Hero** - Slideshow (4 images) with parallax effect and three-tier messaging hierarchy:
+   - Title: "Protecting Redwood Shores" (H1, action-focused)
+   - Tagline: "Our Shores. Our Home." (emotional connection)
+   - Subtitle: Mission statement about smart, climate-aware development
+   - Two CTA buttons: "Take Action Now" and "Learn More"
+   - Responsive typography: Tagline scales from 1.8rem (desktop) to 1.2rem (mobile)
 2. **About the Coalition** - Mission statement and community stats (500+ residents, 30+ years, 1 voice)
 3. **What We Do** - Four key activities: Educate, Advocate, Protect, Organize
 4. **Redwood Life: Our Concerns** - Six concern areas:
