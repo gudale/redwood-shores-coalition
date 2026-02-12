@@ -1,0 +1,22 @@
+{
+  "images": [
+    {
+      "filename": "Hero-1.png",
+      "alt": "Redwood Shores waterfront view"
+    },
+    {
+      "filename": "Hero-2.png",
+      "alt": "Belmont Slough wildlife habitat"
+    },
+    {
+      "filename": "Hero-3.png",
+      "alt": "Redwood Shores community"
+    },
+    {
+      "filename": "Hero-4.png",
+      "alt": "Redwood Shores neighborhood"
+    }
+  ],
+  "transitionSeconds": 6,
+  "parallaxSpeed": 0.5
+}

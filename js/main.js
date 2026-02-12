@@ -5,7 +5,12 @@
 // Google Sheets CSV URL for News & Updates
 const NEWS_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRhSn3ZxfOXYESKFPPQ06owYfvt1xZ0WUPB9WjNJoBNwcXSSZlmixnjE8Mywo97FUXGpOAmnG_gxTOP/pub?output=csv';
 
+// Hero Images Configuration URL
+const HERO_CONFIG_URL = 'hero-config.json';
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Load hero images from config
+    loadHeroImages();
     // Load news from Google Sheets
     loadNewsFromSheet();
     // ========================================
@@ -110,22 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // Hero Parallax Scroll Effect
     // ========================================
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const heroSection = document.querySelector('.hero');
-
-    if (heroSlides.length > 0 && heroSection) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const heroHeight = heroSection.offsetHeight;
-
-            if (scrolled < heroHeight) {
-                const parallaxSpeed = scrolled * 0.5;
-                heroSlides.forEach(slide => {
-                    slide.style.transform = `translateY(${parallaxSpeed}px)`;
-                });
-            }
-        }, { passive: true });
-    }
+    // NOTE: Parallax effect is now initialized by loadHeroImages()
+    // to ensure it applies to dynamically loaded hero slides
 
     // ========================================
     // Form Handling (Basic)
@@ -361,4 +352,85 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+// ========================================
+// Load Hero Images from Configuration
+// ========================================
+async function loadHeroImages() {
+    const heroSlideshow = document.querySelector('.hero-slideshow');
+    if (!heroSlideshow) return;
+
+    try {
+        const response = await fetch(HERO_CONFIG_URL);
+        const config = await response.json();
+
+        if (config.images && config.images.length > 0) {
+            const transitionSeconds = config.transitionSeconds || 6;
+            const totalCycle = config.images.length * transitionSeconds;
+
+            // Generate new slides dynamically
+            heroSlideshow.innerHTML = config.images.map((img, index) => {
+                const altText = img.alt || '';
+                return `<img src="images/${img.filename}"
+                             alt="${altText}"
+                             class="hero-slide hero-slide-${index + 1}">`;
+            }).join('');
+
+            // Update animation timing based on number of images
+            updateHeroAnimation(totalCycle, transitionSeconds);
+
+            // Re-apply parallax effect to new slides
+            initParallaxEffect();
+        }
+    } catch (error) {
+        console.error('Failed to load hero config, using fallback images:', error);
+        // Keep existing hardcoded HTML as fallback
+        // Still initialize parallax for fallback images
+        initParallaxEffect();
+    }
+}
+
+function updateHeroAnimation(totalSeconds, transitionSeconds) {
+    const styleId = 'hero-dynamic-animation';
+    let styleEl = document.getElementById(styleId);
+
+    if (!styleEl) {
+        styleEl = document.createElement('style');
+        styleEl.id = styleId;
+        document.head.appendChild(styleEl);
+    }
+
+    // Calculate animation delays for each slide
+    let animationRules = '';
+    const numSlides = Math.round(totalSeconds / transitionSeconds);
+    for (let i = 1; i <= numSlides; i++) {
+        animationRules += `.hero-slide-${i} { animation-delay: ${(i - 1) * transitionSeconds}s; }\n`;
+    }
+
+    styleEl.textContent = `
+        .hero-slide {
+            animation: heroFade ${totalSeconds}s infinite;
+        }
+        ${animationRules}
+    `;
+}
+
+function initParallaxEffect() {
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroSection = document.querySelector('.hero');
+
+    if (heroSlides.length > 0 && heroSection) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroHeight = heroSection.offsetHeight;
+
+            if (scrolled < heroHeight) {
+                const parallaxSpeed = scrolled * 0.5;
+                heroSlides.forEach(slide => {
+                    slide.style.transform = `translateY(${parallaxSpeed}px)`;
+                });
+            }
+        }, { passive: true });
+    }
 }

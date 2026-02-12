@@ -67,6 +67,15 @@ Community advocacy website for the Redwood Shores Coalition, a group opposing th
 - Title: "See the Data: Redwood Life Project Overview"
 - Subtitle explains what users will see and why it matters
 
+#### Hero Images Configuration
+- Hero slideshow images are configurable via `hero-config.json`
+- JSON structure: array of image objects with filename and alt text
+- JavaScript fetches config and dynamically builds slideshow
+- Supports any number of images (animation timing adjusts automatically)
+- Falls back to hardcoded HTML if config fails to load
+- User documentation in `HERO-IMAGES-README.md`
+- Pattern matches Google Sheets integration: fetch → parse → render → fallback
+
 ### Interactive Features
 - **Hero Parallax Effect:** Slideshow images move at 0.5x scroll speed for depth
 - **Floating CTA Box:** Appears after 800px scroll, dismissible with localStorage persistence
