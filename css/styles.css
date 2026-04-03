@@ -650,6 +650,128 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 }
 
 /* ========================================
+   Position Statement (Formal Letter)
+   ======================================== */
+.position-statement {
+    max-width: 780px;
+    margin: var(--space-xl) auto;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-top: 6px solid var(--color-primary);
+    overflow: hidden;
+}
+
+.position-statement__letterhead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.position-statement__org-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    color: var(--color-primary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.position-statement__org-tagline {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.position-statement__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--color-text);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: var(--space-lg) var(--space-lg) var(--space-sm);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    margin: 0;
+}
+
+.position-statement__body {
+    padding: var(--space-lg);
+}
+
+.position-statement__section-heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: var(--space-lg) 0 var(--space-xs);
+}
+
+.position-statement__section-heading:first-child {
+    margin-top: 0;
+}
+
+.position-statement__body p {
+    font-family: var(--font-body);
+    font-size: 0.975rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    text-align: justify;
+    hyphens: auto;
+}
+
+.position-statement__proposals {
+    margin: var(--space-sm) 0 var(--space-sm) var(--space-md);
+    padding-left: var(--space-sm);
+}
+
+.position-statement__proposals li {
+    font-family: var(--font-body);
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-xs);
+}
+
+.position-statement__endorsement {
+    font-style: italic;
+    color: var(--color-text-light) !important;
+    font-size: 0.9rem !important;
+    border-left: 3px solid var(--color-primary);
+    padding-left: var(--space-sm) !important;
+    margin-left: 0;
+}
+
+.position-statement__footer {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+    background: var(--color-bg);
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.position-statement__closing {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.position-statement__sig-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-primary);
+    padding-left: var(--space-lg);
+}
+
+/* ========================================
    Action Section
    ======================================== */
 .action {
@@ -1225,6 +1347,23 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
         grid-template-columns: 1fr;
     }
 
+    .position-statement {
+        border-radius: 6px;
+    }
+
+    .position-statement__letterhead,
+    .position-statement__title,
+    .position-statement__body,
+    .position-statement__footer {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    .position-statement__body p {
+        text-align: left;
+        hyphens: none;
+    }
+
     .action-grid {
         grid-template-columns: 1fr;
     }
@@ -1276,6 +1415,27 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 
     .hero-tagline {
         font-size: 1.2rem;
+    }
+
+    .position-statement {
+        border-top-width: 4px;
+        border-radius: 4px;
+    }
+
+    .position-statement__letterhead,
+    .position-statement__title,
+    .position-statement__body,
+    .position-statement__footer {
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+    }
+
+    .position-statement__proposals {
+        margin-left: var(--space-sm);
+    }
+
+    .position-statement__sig-name {
+        padding-left: var(--space-sm);
     }
 
     .signup-form {
