@@ -852,7 +852,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .slideshow-container {
     position: relative;
     width: 100%;
-    padding-bottom: 58.5%; /* 749/1280 = 0.585 aspect ratio */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for YouTube video */
     height: 0;
     overflow: hidden;
     border-radius: 4px;
@@ -1462,9 +1462,9 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
         margin-bottom: var(--space-sm);
     }
 
-    /* Adjust aspect ratio for mobile viewing */
+    /* Maintain 16:9 aspect ratio for mobile */
     .slideshow-container {
-        padding-bottom: 75%; /* Taller ratio makes slides more readable on small screens */
+        padding-bottom: 56.25%; /* 16:9 aspect ratio for YouTube video */
     }
 }
 
