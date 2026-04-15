@@ -145,6 +145,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--color-primary);
+    white-space: nowrap;
 }
 
 .nav-logo:hover {
@@ -164,16 +165,17 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: var(--space-lg);
+    gap: 1rem;
 }
 
 .nav-link {
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     color: var(--color-text);
     padding: var(--space-xs) 0;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-link::after {
