@@ -1264,6 +1264,67 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 }
 
 /* ========================================
+   Resources Section
+   ======================================== */
+.resources {
+    background: var(--color-bg);
+}
+
+.resources-list {
+    display: grid;
+    gap: var(--space-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.resource-item {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--color-primary);
+}
+
+.resource-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left-width: 6px;
+}
+
+.resource-item h3 {
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.resource-item h3 a {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.resource-item h3 a:hover {
+    color: var(--color-accent);
+}
+
+.resource-item p {
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.resource-item--image-link .resource-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: var(--space-sm);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.resource-item--image-link a:hover .resource-img {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* ========================================
    Responsive Design
    ======================================== */
 
