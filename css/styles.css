@@ -428,7 +428,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
    About Section
    ======================================== */
 .about {
-    background: var(--color-white);
+    background: var(--color-bg);
 }
 
 .about-content {
@@ -482,6 +482,13 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .stat-label {
     font-size: 0.9rem;
     color: var(--color-text-light);
+}
+
+.subsection-title {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin: var(--space-xl) 0 var(--space-md);
+    text-align: center;
 }
 
 /* ========================================
