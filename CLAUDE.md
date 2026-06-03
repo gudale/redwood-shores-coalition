@@ -25,6 +25,7 @@ Community advocacy website for the Redwood Shores Coalition, a group opposing th
 ├── ForAI/              # Research and reference materials (local only, not in git)
 │   ├── mobile-research.md     # Mobile responsiveness testing notes
 │   └── forAI10X.png           # Reference screenshots
+├── CHANGELOG.md        # Project change log (update when making significant changes)
 ├── CLAUDE.md           # This file
 └── .claude/            # Claude Code settings (local only, not in git)
 ```
