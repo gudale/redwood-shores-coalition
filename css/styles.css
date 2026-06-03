@@ -1403,7 +1403,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 }
 
 /* Tablet & Mobile Navigation */
-@media (max-width: 950px) {
+@media (max-width: 1130px) {
     :root {
         --header-height: 60px;
     }
