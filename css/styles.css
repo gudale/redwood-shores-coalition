@@ -463,8 +463,19 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .scale-facts__regional {
     font-style: italic;
     font-size: 0.95rem;
-    margin: 0;
+    margin: 0 0 0.75rem 0;
     color: var(--color-text-light);
+}
+
+.scale-facts__learn-more {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.scale-facts__learn-more a {
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
 /* ========================================
