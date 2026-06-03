@@ -533,7 +533,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 
 .whatwedo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
 }
 
@@ -1451,6 +1451,10 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     }
 
     .concerns-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .whatwedo-grid {
         grid-template-columns: 1fr;
     }
 
