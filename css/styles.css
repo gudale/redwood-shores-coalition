@@ -838,6 +838,29 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     color: #0070c0;
 }
 
+.position-statement__details {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+    background: var(--color-bg);
+    border-top: 1px solid rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.position-statement__details p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.position-statement__details a {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.position-statement__details a:hover {
+    color: var(--color-accent-dark);
+    text-decoration: underline;
+}
+
 /* ========================================
    Action Section
    ======================================== */
