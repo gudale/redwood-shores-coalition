@@ -2,6 +2,12 @@
 
 All notable changes to the Redwood Shores Coalition website are documented here.
 
+## [2026-06-09]
+
+### Added
+- Link to detailed Livable Plan document (Google Drive published doc) in position statement footer
+- New `.position-statement__details` styling with accent-colored link and hover effects
+
 ## [2026-06-03]
 
 ### Added
