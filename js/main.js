@@ -232,6 +232,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    // Floating Petition Card
+    // ========================================
+    const floatingPetition = document.getElementById('floating-petition');
+    const floatingPetitionClose = document.getElementById('floating-petition-close');
+    let petitionDismissed = localStorage.getItem('petitionDismissed');
+    const issueSection = document.getElementById('issue');
+
+    if (floatingPetition && !petitionDismissed && issueSection) {
+        window.addEventListener('scroll', function() {
+            const issueRect = issueSection.getBoundingClientRect();
+            if (issueRect.bottom < window.innerHeight) {
+                floatingPetition.classList.add('visible');
+            }
+        }, { passive: true });
+
+        if (floatingPetitionClose) {
+            floatingPetitionClose.addEventListener('click', function() {
+                floatingPetition.classList.remove('visible');
+                setTimeout(() => {
+                    floatingPetition.classList.add('hidden');
+                }, 400);
+                localStorage.setItem('petitionDismissed', 'true');
+            });
+        }
+    }
 });
 
 // ========================================

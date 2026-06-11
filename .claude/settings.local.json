@@ -18,7 +18,17 @@
       "WebFetch(domain:www.redwoodlifeplan.com)",
       "Bash(git -C \"c:/redwood-shores-coalition\" add CLAUDE.md)",
       "Bash(git -C \"c:/redwood-shores-coalition\" commit -m \"$\\(cat <<''EOF''\nAdd CLAUDE.md for project context\n\nDocuments project overview, tech stack, file structure, Google Sheets\nintegration, local dev setup, and related resources for future sessions.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd hero images, CNAME file, and stat card animations\n\n- Add all hero background images \\(Hero-1.png through Hero-4.png\\)\n- Add CNAME file for GitHub Pages custom domain support\n- Implement left-to-right slide animation for stat cards with stagger effect\n- Update subheader styling for uniform appearance across Take Action section\n- Add ForAI reference materials and mobile research documentation\n\nCo-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate documentation for hero section messaging structure\n\n- Document three-tier messaging hierarchy: Title → Tagline → Subtitle\n- Add tagline \"Our Shores. Our Home.\" to site sections description\n- Include responsive typography specifications\n- Clarify hero section components and CTA buttons\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(ls:*)",
+      "Bash(curl -s http://localhost:8000)",
+      "Bash(curl -s http://localhost:8000/css/styles.css)",
+      "Bash(grep -A20 '\\\\/\\\\* Petition section')",
+      "Bash(grep -A8 '\\\\/\\\\* Floating petition card')"
     ]
   }
 }

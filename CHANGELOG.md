@@ -2,6 +2,19 @@
 
 All notable changes to the Redwood Shores Coalition website are documented here.
 
+## [2026-06-11]
+
+### Added
+- New "Sign the Petition" inline section positioned prominently between Redwood Life Exposed and The Livable Plan
+- Change.org petition link (https://c.org/j6f2XydfBj) with dedicated CTA button
+- Floating petition card (bottom-left, dismissible) that appears when user scrolls past the issue section
+- Navigation link to "Sign the Petition" section
+
+### Changed
+- Hero primary CTA updated from "Take Action Now" to "Sign the Petition" (points to #petition)
+- Removed "How We Work" section to shorten scroll distance to critical content
+- Navigation structure: removed "How We Work" link, added "Sign the Petition" link after "Redwood Life Exposed"
+
 ## [2026-06-09]
 
 ### Added
