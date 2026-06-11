@@ -14,6 +14,10 @@ All notable changes to the Redwood Shores Coalition website are documented here.
 - Hero primary CTA updated from "Take Action Now" to "Sign the Petition" (points to #petition)
 - Removed "How We Work" section to shorten scroll distance to critical content
 - Navigation structure: removed "How We Work" link, added "Sign the Petition" link after "Redwood Life Exposed"
+- Fixed petition section centering: added `text-align: center` to `.petition-count` CSS rule
+- Moved "Want to stay informed?" CTA from News & Updates section to The Livable Plan section (below position statement)
+- Commented out News & Updates section (preserved for future use, not deleted)
+- Removed "Updates" navigation links from header and footer menus
 
 ## [2026-06-09]
 

@@ -28,7 +28,9 @@
       "Bash(curl -s http://localhost:8000)",
       "Bash(curl -s http://localhost:8000/css/styles.css)",
       "Bash(grep -A20 '\\\\/\\\\* Petition section')",
-      "Bash(grep -A8 '\\\\/\\\\* Floating petition card')"
+      "Bash(grep -A8 '\\\\/\\\\* Floating petition card')",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
     ]
   }
 }

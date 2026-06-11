@@ -1695,6 +1695,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .petition-count {
     font-size: 1.1rem;
     color: var(--color-text-light);
+    text-align: center;
 }
 
 .btn-large {
