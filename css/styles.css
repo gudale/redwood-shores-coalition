@@ -1282,9 +1282,9 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
     gap: var(--space-lg);
     padding-bottom: var(--space-lg);
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -1295,6 +1295,8 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
+    align-items: center;
+    text-align: center;
 }
 
 .footer-brand .logo-icon {
@@ -1322,6 +1324,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     display: flex;
     gap: var(--space-lg);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-links a {
@@ -1523,15 +1526,6 @@ a.resource-item--image-link:hover .resource-img {
 
     .action-grid {
         grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
     }
 
     .floating-cta {
