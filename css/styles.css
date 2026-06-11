@@ -913,6 +913,16 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
     margin-right: auto;
 }
 
+.action-petition-cta {
+    text-align: center;
+    margin: var(--space-lg) 0;
+}
+
+.action-petition-cta p {
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-light);
+}
+
 /* Google Slides Embed */
 .slideshow-embed {
     max-width: 1100px; /* Wider than letter generator for slide content */
